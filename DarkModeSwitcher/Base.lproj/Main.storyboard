@@ -812,9 +812,21 @@
                                     <action selector="TerminationRequested:" target="XfG-lQ-9wD" id="xbZ-53-YuC"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9k6-J1-HI6">
+                                <rect key="frame" x="349" y="59" width="96" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Run on boot" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Z6p-Zg-5Ie">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="runOnBoot:" target="XfG-lQ-9wD" id="5Wm-Rm-pXm"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="bootCheckBox" destination="9k6-J1-HI6" id="3Vh-88-G8o"/>
                         <outlet property="darkTimeLabel" destination="V4x-9X-cul" id="Vrw-c0-bjf"/>
                         <outlet property="darkTimePicker" destination="rfd-qX-1m9" id="1QU-ar-uzA"/>
                         <outlet property="lightTimeLabel" destination="rjg-zk-OG1" id="msU-59-xQ2"/>

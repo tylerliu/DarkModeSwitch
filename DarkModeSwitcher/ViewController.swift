@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 class ViewController: NSViewController, NSWindowDelegate {
     
@@ -19,6 +20,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     @IBOutlet weak var lightTimeLabel: NSTextField!
     @IBOutlet weak var darkTimeLabel: NSTextField!
     
+    @IBOutlet weak var bootCheckBox: NSButton!
     
     //TODO Shift switch time before sunrise/sunset
     
@@ -40,6 +42,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         
         lightTimePicker.dateValue = Preference.getDate(time: Preference.lightTime);
         darkTimePicker.dateValue = Preference.getDate(time: Preference.darkTime);
+        bootCheckBox.state = Preference.runOnBoot ? .on : .off;
         
         
         var radioButtons : [NSButton] = [offRadioButton, sunRadioButton, scheduledRadioButton];
@@ -65,6 +68,12 @@ class ViewController: NSViewController, NSWindowDelegate {
         SchedulerBackground.alertChange();
     }
     
+    @IBAction func runOnBoot(_ sender: Any) {
+        Preference.setRunOnBoot(runOnBoot: bootCheckBox?.state == .on);
+        if (!AppDelegate.setBoot(state: Preference.runOnBoot)) {
+            print("Set on boot failed");
+        }
+    }
     @IBAction func TerminationRequested(_ sender: Any) {
         exit(EXIT_SUCCESS);
     }

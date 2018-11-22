@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B336A9021A7388F00050435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B336A8F21A7388F00050435 /* AppDelegate.swift */; };
+		9B336A9221A7389100050435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B336A9121A7389100050435 /* Assets.xcassets */; };
+		9B336A9C21A73DD100050435 /* SwitcherLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B336A8D21A7388F00050435 /* SwitcherLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9B336AA321A73F4700050435 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B336A9F21A73E0300050435 /* ServiceManagement.framework */; };
+		9B336AE021A747C700050435 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B336AD821A7479100050435 /* MainMenu.xib */; };
 		9B366F7021A646D500CCDF94 /* SchedulerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B366F6F21A646D500CCDF94 /* SchedulerBackground.swift */; };
 		9B366F7221A6A03200CCDF94 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B366F7121A6A03200CCDF94 /* Preference.swift */; };
 		9B4B939321A3F32A0016E409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B939221A3F32A0016E409 /* AppDelegate.swift */; };
@@ -35,7 +40,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9B336A9B21A73DA800050435 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				9B336A9C21A73DD100050435 /* SwitcherLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9B336A8D21A7388F00050435 /* SwitcherLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitcherLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B336A8F21A7388F00050435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9B336A9121A7389100050435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B336A9621A7389100050435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B336A9721A7389100050435 /* SwitcherLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwitcherLauncher.entitlements; sourceTree = "<group>"; };
+		9B336A9F21A73E0300050435 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		9B336AD921A7479100050435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9B366F6F21A646D500CCDF94 /* SchedulerBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerBackground.swift; sourceTree = "<group>"; };
 		9B366F7121A6A03200CCDF94 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		9B4B938F21A3F32A0016E409 /* DarkModeSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkModeSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,10 +80,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9B336A8A21A7388F00050435 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9B4B938C21A3F32A0016E409 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B336AA321A73F4700050435 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,13 +112,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B336A8E21A7388F00050435 /* SwitcherLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				9B336AD821A7479100050435 /* MainMenu.xib */,
+				9B336A8F21A7388F00050435 /* AppDelegate.swift */,
+				9B336A9121A7389100050435 /* Assets.xcassets */,
+				9B336A9621A7389100050435 /* Info.plist */,
+				9B336A9721A7389100050435 /* SwitcherLauncher.entitlements */,
+			);
+			path = SwitcherLauncher;
+			sourceTree = "<group>";
+		};
+		9B336A9E21A73E0300050435 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B336A9F21A73E0300050435 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B4B938621A3F32A0016E409 = {
 			isa = PBXGroup;
 			children = (
 				9B4B939121A3F32A0016E409 /* DarkModeSwitcher */,
 				9B4B93A421A3F32B0016E409 /* DarkModeSwitcherTests */,
 				9B4B93AF21A3F32B0016E409 /* DarkModeSwitcherUITests */,
+				9B336A8E21A7388F00050435 /* SwitcherLauncher */,
 				9B4B939021A3F32A0016E409 /* Products */,
+				9B336A9E21A73E0300050435 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +150,7 @@
 				9B4B938F21A3F32A0016E409 /* DarkModeSwitcher.app */,
 				9B4B93A121A3F32B0016E409 /* DarkModeSwitcherTests.xctest */,
 				9B4B93AC21A3F32B0016E409 /* DarkModeSwitcherUITests.xctest */,
+				9B336A8D21A7388F00050435 /* SwitcherLauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +192,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9B336A8C21A7388F00050435 /* SwitcherLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B336A9A21A7389100050435 /* Build configuration list for PBXNativeTarget "SwitcherLauncher" */;
+			buildPhases = (
+				9B336A8921A7388F00050435 /* Sources */,
+				9B336A8A21A7388F00050435 /* Frameworks */,
+				9B336A8B21A7388F00050435 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwitcherLauncher;
+			productName = SwitcherLauncher;
+			productReference = 9B336A8D21A7388F00050435 /* SwitcherLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
 		9B4B938E21A3F32A0016E409 /* DarkModeSwitcher */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B4B93B521A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitcher" */;
@@ -143,6 +216,7 @@
 				9B4B938B21A3F32A0016E409 /* Sources */,
 				9B4B938C21A3F32A0016E409 /* Frameworks */,
 				9B4B938D21A3F32A0016E409 /* Resources */,
+				9B336A9B21A73DA800050435 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -199,6 +273,14 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Tyler Liu";
 				TargetAttributes = {
+					9B336A8C21A7388F00050435 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					9B4B938E21A3F32A0016E409 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -233,11 +315,21 @@
 				9B4B938E21A3F32A0016E409 /* DarkModeSwitcher */,
 				9B4B93A021A3F32B0016E409 /* DarkModeSwitcherTests */,
 				9B4B93AB21A3F32B0016E409 /* DarkModeSwitcherUITests */,
+				9B336A8C21A7388F00050435 /* SwitcherLauncher */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9B336A8B21A7388F00050435 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B336A9221A7389100050435 /* Assets.xcassets in Resources */,
+				9B336AE021A747C700050435 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9B4B938D21A3F32A0016E409 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,6 +356,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9B336A8921A7388F00050435 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B336A9021A7388F00050435 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9B4B938B21A3F32A0016E409 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +408,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9B336AD821A7479100050435 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B336AD921A7479100050435 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		9B4B939821A3F32B0016E409 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -319,6 +427,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9B336A9821A7389100050435 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwitcherLauncher/SwitcherLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SwitcherLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.SwitcherLauncher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		9B336A9921A7389100050435 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwitcherLauncher/SwitcherLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SwitcherLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.SwitcherLauncher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		9B4B93B321A3F32B0016E409 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,6 +595,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.DarkModeSwitcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -468,6 +615,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.DarkModeSwitcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -553,6 +701,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9B336A9A21A7389100050435 /* Build configuration list for PBXNativeTarget "SwitcherLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B336A9821A7389100050435 /* Debug */,
+				9B336A9921A7389100050435 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9B4B938A21A3F32A0016E409 /* Build configuration list for PBXProject "DarkModeSwitcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

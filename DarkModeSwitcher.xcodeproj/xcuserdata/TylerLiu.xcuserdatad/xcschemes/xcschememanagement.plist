@@ -9,6 +9,34 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Rem.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>SwitcherLauncher.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9B4B938E21A3F32A0016E409</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B4B93A021A3F32B0016E409</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B4B93AB21A3F32B0016E409</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

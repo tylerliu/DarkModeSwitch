@@ -19,7 +19,6 @@ class SchedulerBackground : Thread{
             if (self.isCancelled) {
                 break;
             }
-            print("Checking...");
             SchedulerBackground.dataLock.lock();
             switch Preference.scheduleType {
             case Preference.SWITCH_SCHEDULE:

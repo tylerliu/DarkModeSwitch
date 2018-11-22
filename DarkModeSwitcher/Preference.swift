@@ -31,6 +31,8 @@ class Preference {
     private(set) static var darkShift = 0;
     private(set) static var lat = 0; // TODO implement this
     
+    //run on boot
+    private(set) static var runOnBoot = false;
     
     static func loadPreference() {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore");
@@ -42,6 +44,8 @@ class Preference {
             darkTime = UserDefaults.standard.integer(forKey: "darkTime");
             lightShift = UserDefaults.standard.integer(forKey: "lightShift");
             darkShift = UserDefaults.standard.integer(forKey: "darkShift");
+            
+            runOnBoot = UserDefaults.standard.bool(forKey: "runOnBoot");
         } else {
             print("Initial launch.");
             UserDefaults.standard.set(true, forKey: "launchedBefore");
@@ -51,6 +55,8 @@ class Preference {
             UserDefaults.standard.set(18 * 3600, forKey: "darkTime");
             UserDefaults.standard.set(0, forKey: "lightShift");
             UserDefaults.standard.set(0, forKey: "darkShift");
+            
+            UserDefaults.standard.set(false, forKey: "runOnBoot");
         }
     }
     
@@ -70,6 +76,11 @@ class Preference {
         UserDefaults.standard.set(SWITCH_SCHEDULE, forKey: "scheduleType");
         UserDefaults.standard.set(lightShift, forKey: "lightShift");
         UserDefaults.standard.set(darkShift, forKey: "darkShift");
+    }
+    
+    static func setRunOnBoot(runOnBoot : Bool) {
+        Preference.runOnBoot = runOnBoot;
+        UserDefaults.standard.set(runOnBoot, forKey: "runOnBoot");
     }
     
     //utility function

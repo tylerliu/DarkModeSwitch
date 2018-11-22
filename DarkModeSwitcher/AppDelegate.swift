@@ -7,6 +7,11 @@
 //
 
 import Cocoa
+import ServiceManagement
+
+extension Notification.Name {
+    static let killLauncher = Notification.Name("killLauncher")
+}
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -19,7 +24,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.notificationCenter.addObserver(
             self, selector: #selector(onWakeNote(note:)),
             name: NSWorkspace.didWakeNotification, object: nil)
-        window?.close();
+        
+        checkBoot()
+    }
+    
+    func checkBoot() {
+        let launcherID = "Tyler-Liu.SwitcherLauncher";
+        let runningApps = NSWorkspace.shared.runningApplications;
+        let launcherRunning = !runningApps.filter { $0.bundleIdentifier == launcherID }.isEmpty
+        
+        if launcherRunning {
+            DistributedNotificationCenter.default().post(name: .killLauncher,
+                                                         object: Bundle.main.bundleIdentifier!)
+            window?.close();
+        }
+    }
+    
+    static func setBoot(state : Bool)  -> Bool{
+        let launcherID = "Tyler-Liu.SwitcherLauncher";
+        return SMLoginItemSetEnabled(launcherID as CFString, state);
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
