@@ -30,3 +30,16 @@ func isDarkMode() -> Bool {
     let osxMode = UserDefaults.standard.string(forKey: "AppleInterfaceStyle") ?? "Light"
     return osxMode == "Dark";
 }
+
+func triggerPermission() {
+    let code = "tell application \"System Events\" \nend tell";
+    
+    var error: NSDictionary?
+    if let scriptObject = NSAppleScript(source: code) {
+        if let outputString = scriptObject.executeAndReturnError(&error).stringValue {
+            print(outputString)
+        } else if (error != nil) {
+            print("error: ", error!)
+        }
+    }
+}

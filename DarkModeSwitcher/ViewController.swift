@@ -12,9 +12,12 @@ import ServiceManagement
 class ViewController: NSViewController, NSWindowDelegate {
     
     
-    @IBOutlet weak var offRadioButton: NSButton!
-    @IBOutlet weak var sunRadioButton: NSButton!
-    @IBOutlet weak var scheduledRadioButton: NSButton!
+    
+    @IBOutlet weak var scheduleOption: NSPopUpButton!
+    @IBOutlet weak var manualOption: NSMenuItem!
+    @IBOutlet weak var sunOption: NSMenuItem!
+    @IBOutlet weak var customOption: NSMenuItem!
+    
     @IBOutlet weak var lightTimePicker: NSDatePicker!
     @IBOutlet weak var darkTimePicker: NSDatePicker!
     @IBOutlet weak var lightTimeLabel: NSTextField!
@@ -44,14 +47,13 @@ class ViewController: NSViewController, NSWindowDelegate {
         darkTimePicker.dateValue = Preference.getDate(time: Preference.darkTime);
         bootCheckBox.state = Preference.runOnBoot ? .on : .off;
         
-        
-        var radioButtons : [NSButton] = [offRadioButton, sunRadioButton, scheduledRadioButton];
-        radioButtons[Preference.scheduleType].performClick(self);
+        scheduleOption.select(scheduleOption.item(at: Preference.scheduleType));
+        optionChanged(scheduleOption);
     }
     
-    @IBAction func optionClicked(_ sender: NSButton) {
+    @IBAction func optionChanged(_ sender: NSPopUpButton) {
         //set enable and color
-        let enableSchedule = sender.title == scheduledRadioButton.title
+        let enableSchedule = sender.selectedItem == customOption
         lightTimeLabel.isEnabled = enableSchedule
         darkTimeLabel.isEnabled = enableSchedule
         lightTimePicker.isEnabled = enableSchedule
@@ -63,9 +65,14 @@ class ViewController: NSViewController, NSWindowDelegate {
         darkTimePicker.textColor = textColor
         
         //send action
+        Preference.setPreferenceType(scheduleType: sender.index(of: sender.selectedItem!))
+        SchedulerBackground.alertChange();
+    }
+    
+    @IBAction func TimeChanged(_ sender: NSDatePicker) {
         Preference.setPreference(lightTime: Preference.getTime(date: lightTimePicker.dateValue),
                                  darkTime: Preference.getTime(date: darkTimePicker.dateValue))
-        SchedulerBackground.alertChange();
+        
     }
     
     @IBAction func runOnBoot(_ sender: Any) {

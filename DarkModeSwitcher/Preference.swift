@@ -57,7 +57,13 @@ class Preference {
             UserDefaults.standard.set(0, forKey: "darkShift");
             
             UserDefaults.standard.set(false, forKey: "runOnBoot");
+            triggerPermission();
         }
+    }
+    
+    static func setPreferenceType(scheduleType : Int) {
+        Preference.scheduleType = scheduleType;
+        UserDefaults.standard.set(scheduleType, forKey: "scheduleType");
     }
     
     static func setPreference(lightTime : Int, darkTime : Int) {
