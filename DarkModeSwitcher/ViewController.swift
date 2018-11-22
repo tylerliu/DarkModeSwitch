@@ -8,12 +8,25 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
-
+class ViewController: NSViewController, NSWindowDelegate {
+    
+    
+    @IBOutlet weak var offRadioButton: NSButton!
+    @IBOutlet weak var sunRadioButton: NSButton!
+    @IBOutlet weak var scheduledRadioButton: NSButton!
+    @IBOutlet weak var lightTimePicker: NSDatePicker!
+    @IBOutlet weak var darkTimePicker: NSDatePicker!
+    @IBOutlet weak var lightTimeLabel: NSTextField!
+    @IBOutlet weak var darkTimeLabel: NSTextField!
+    
+    
+    //TODO Shift switch time before sunrise/sunset
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        loadFromPreference()
+        SchedulerBackground.startBackground();
     }
 
     override var representedObject: Any? {
@@ -21,7 +34,39 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
-
+    
+    func loadFromPreference() {
+        Preference.loadPreference();
+        
+        lightTimePicker.dateValue = Preference.getDate(time: Preference.lightTime);
+        darkTimePicker.dateValue = Preference.getDate(time: Preference.darkTime);
+        
+        
+        var radioButtons : [NSButton] = [offRadioButton, sunRadioButton, scheduledRadioButton];
+        radioButtons[Preference.scheduleType].performClick(self);
+    }
+    
+    @IBAction func optionClicked(_ sender: NSButton) {
+        //set enable and color
+        let enableSchedule = sender.title == scheduledRadioButton.title
+        lightTimeLabel.isEnabled = enableSchedule
+        darkTimeLabel.isEnabled = enableSchedule
+        lightTimePicker.isEnabled = enableSchedule
+        darkTimePicker.isEnabled = enableSchedule
+        let textColor = enableSchedule ? NSColor.labelColor : NSColor.secondaryLabelColor
+        lightTimeLabel.textColor = textColor
+        darkTimeLabel.textColor = textColor
+        lightTimePicker.textColor = textColor
+        darkTimePicker.textColor = textColor
+        
+        //send action
+        Preference.setPreference(lightTime: Preference.getTime(date: lightTimePicker.dateValue),
+                                 darkTime: Preference.getTime(date: darkTimePicker.dateValue))
+        SchedulerBackground.alertChange();
+    }
+    
+    @IBAction func TerminationRequested(_ sender: Any) {
+        exit(EXIT_SUCCESS);
+    }
 }
 
