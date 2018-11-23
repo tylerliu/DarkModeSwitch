@@ -11,8 +11,6 @@ import ServiceManagement
 
 class ViewController: NSViewController, NSWindowDelegate {
     
-    
-    
     @IBOutlet weak var scheduleOption: NSPopUpButton!
     @IBOutlet weak var manualOption: NSMenuItem!
     @IBOutlet weak var sunOption: NSMenuItem!
@@ -63,8 +61,16 @@ class ViewController: NSViewController, NSWindowDelegate {
         let onManual = sender.selectedItem == manualOption
         lightButton.isHidden = !onManual
         darkButton.isHidden = !onManual
-        if (onManual) {
+        if onManual {
             updateManualButtons()
+        }
+        
+        //sunrise and sunset
+        let onSun = sender.selectedItem == sunOption
+        if onSun {
+            LocationService.startMonitor()
+        } else {
+            LocationService.stopMonitor()
         }
         
         //custom

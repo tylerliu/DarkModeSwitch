@@ -29,7 +29,8 @@ class Preference {
     //for sunrise/sunset with shift
     private(set) static var lightShift = 0;
     private(set) static var darkShift = 0;
-    private(set) static var lat = 0; // TODO implement this
+    private(set) static var lat = 0.0;
+    private(set) static var lon = 0.0;
     
     //run on boot
     private(set) static var runOnBoot = false;
@@ -42,10 +43,14 @@ class Preference {
             scheduleType = UserDefaults.standard.integer(forKey: "scheduleType");
             lightTime = UserDefaults.standard.integer(forKey: "lightTime");
             darkTime = UserDefaults.standard.integer(forKey: "darkTime");
-            lightShift = UserDefaults.standard.integer(forKey: "lightShift");
-            darkShift = UserDefaults.standard.integer(forKey: "darkShift");
             
             runOnBoot = UserDefaults.standard.bool(forKey: "runOnBoot");
+            
+            
+            lightShift = UserDefaults.standard.integer(forKey: "lightShift");
+            darkShift = UserDefaults.standard.integer(forKey: "darkShift");
+            lat = UserDefaults.standard.double(forKey: "lat");
+            lon = UserDefaults.standard.double(forKey: "lon");
         } else {
             print("Initial launch.");
             UserDefaults.standard.set(true, forKey: "launchedBefore");
@@ -53,10 +58,15 @@ class Preference {
             UserDefaults.standard.set(0, forKey: "scheduleType");
             UserDefaults.standard.set(6 * 3600, forKey: "lightTime");
             UserDefaults.standard.set(18 * 3600, forKey: "darkTime");
-            UserDefaults.standard.set(0, forKey: "lightShift");
-            UserDefaults.standard.set(0, forKey: "darkShift");
             
             UserDefaults.standard.set(false, forKey: "runOnBoot");
+            
+            UserDefaults.standard.set(0, forKey: "lightShift");
+            UserDefaults.standard.set(0, forKey: "darkShift");
+            UserDefaults.standard.set(0.0, forKey: "lat")
+            lon = LocationService.approximateLonFromTZ()
+            UserDefaults.standard.set(lon, forKey: "lon")
+            
             triggerPermission();
         }
     }
@@ -87,6 +97,13 @@ class Preference {
     static func setRunOnBoot(runOnBoot : Bool) {
         Preference.runOnBoot = runOnBoot;
         UserDefaults.standard.set(runOnBoot, forKey: "runOnBoot");
+    }
+    
+    static func setLocation(lat : Double, lon : Double) {
+        Preference.lat = lat;
+        Preference.lon = lon;
+        UserDefaults.standard.set(lat, forKey: "lat")
+        UserDefaults.standard.set(lon, forKey: "lon")
     }
     
     //utility function

@@ -33,7 +33,8 @@ class SchedulerBackground : Thread{
                     setDarkMode(mode: isDark);
                 }
             case Preference.SWITCH_SUN:
-                break;
+                let solar = Solar(latitude: Preference.lat, longitude: Preference.lon)
+                setDarkMode(mode: solar!.isCivilNighttime)
             case Preference.SWITCH_OFF:
                 break;
             default:
@@ -41,7 +42,7 @@ class SchedulerBackground : Thread{
             }
             SchedulerBackground.dataLock.unlock();
             SchedulerBackground.settingChange.lock();
-            SchedulerBackground.settingChange.wait(until: Date.init(timeIntervalSinceNow: 10)); //10 second from now
+            SchedulerBackground.settingChange.wait(until: Date.init(timeIntervalSinceNow: 15));
             SchedulerBackground.settingChange.unlock();
         }
     }

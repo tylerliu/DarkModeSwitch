@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B179C9021A79E0B00F22263 /* Solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B179C8F21A79E0B00F22263 /* Solar.swift */; };
+		9B179C9221A7AF1100F22263 /* LocationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B179C9121A7AF1100F22263 /* LocationBackground.swift */; };
 		9B336A9021A7388F00050435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B336A8F21A7388F00050435 /* AppDelegate.swift */; };
 		9B336A9221A7389100050435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B336A9121A7389100050435 /* Assets.xcassets */; };
 		9B336A9C21A73DD100050435 /* SwitcherLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B336A8D21A7388F00050435 /* SwitcherLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -54,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9B179C8F21A79E0B00F22263 /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
+		9B179C9121A7AF1100F22263 /* LocationBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBackground.swift; sourceTree = "<group>"; };
 		9B336A8D21A7388F00050435 /* SwitcherLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitcherLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B336A8F21A7388F00050435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B336A9121A7389100050435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				9B4B93BE21A3F3840016E409 /* Switcher.swift */,
 				9B366F7121A6A03200CCDF94 /* Preference.swift */,
 				9B366F6F21A646D500CCDF94 /* SchedulerBackground.swift */,
+				9B179C8F21A79E0B00F22263 /* Solar.swift */,
+				9B179C9121A7AF1100F22263 /* LocationBackground.swift */,
 			);
 			path = DarkModeSwitcher;
 			sourceTree = "<group>";
@@ -368,9 +374,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B179C9221A7AF1100F22263 /* LocationBackground.swift in Sources */,
 				9B366F7221A6A03200CCDF94 /* Preference.swift in Sources */,
 				9B4B939521A3F32A0016E409 /* ViewController.swift in Sources */,
 				9B4B939321A3F32A0016E409 /* AppDelegate.swift in Sources */,
+				9B179C9021A79E0B00F22263 /* Solar.swift in Sources */,
 				9B4B93BF21A3F3840016E409 /* Switcher.swift in Sources */,
 				9B366F7021A646D500CCDF94 /* SchedulerBackground.swift in Sources */,
 			);

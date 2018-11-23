@@ -8,6 +8,7 @@
 
 import Cocoa
 import ServiceManagement
+import CoreLocation
 
 extension Notification.Name {
     static let killLauncher = Notification.Name("killLauncher")
@@ -18,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow?
     
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         window = NSApplication.shared.windows.first;
@@ -26,6 +28,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             name: NSWorkspace.didWakeNotification, object: nil)
         
         checkBoot()
+        LocationService.initiatize()
+        LocationService.update()
     }
     
     func checkBoot() {
@@ -55,6 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func onWakeNote(note: NSNotification) {
+        LocationService.update();
         SchedulerBackground.alertChange();
     }
 }
