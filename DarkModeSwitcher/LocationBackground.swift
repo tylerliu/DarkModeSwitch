@@ -12,12 +12,12 @@ import CoreLocation
 class LocationService : NSObject, CLLocationManagerDelegate {
     
     static let locationManager = CLLocationManager()
-    static private let shared = LocationService();
+    static private let shared = LocationService()
     
     static func initiatize() {
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = shared;
-            locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
+            locationManager.delegate = shared
+            locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         }
     }
     
@@ -46,11 +46,11 @@ class LocationService : NSObject, CLLocationManagerDelegate {
     static func approximateLonFromTZ() -> Double {
         var lon = Double(TimeZone.current.secondsFromGMT()) / 240.0
         if lon > 180.1 {
-            lon -= 360;
+            lon -= 360
         }
         if lon < -180.1 {
-            lon += 360;
+            lon += 360
         }
-        return lon;
+        return lon
     }
 }

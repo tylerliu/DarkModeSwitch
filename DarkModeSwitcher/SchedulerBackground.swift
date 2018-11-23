@@ -10,53 +10,53 @@ import Cocoa
 
 class SchedulerBackground : Thread{
     
-    static var scheduler : SchedulerBackground?;
-    static var settingChange = NSCondition();
-    static var dataLock = NSCondition();
+    static var scheduler : SchedulerBackground?
+    static var settingChange = NSCondition()
+    static var dataLock = NSCondition()
     
     override func main() {
         while true {
             if (self.isCancelled) {
-                break;
+                break
             }
-            SchedulerBackground.dataLock.lock();
+            SchedulerBackground.dataLock.lock()
             switch Preference.scheduleType {
             case Preference.SWITCH_SCHEDULE:
-                let current = Preference.getTime(date: Date.init(timeIntervalSinceNow: 0)); // current time
+                let current = Preference.getTime(date: Date.init(timeIntervalSinceNow: 0)) // current time
                 if Preference.lightTime == Preference.darkTime {
-                    break; // do nothing
+                    break // do nothing
                 } else if Preference.lightTime < Preference.darkTime { // normal
-                    let isLight = Preference.lightTime <= current && current <= Preference.darkTime;
-                    setDarkMode(mode: !isLight);
+                    let isLight = Preference.lightTime <= current && current <= Preference.darkTime
+                    setDarkMode(mode: !isLight)
                 } else {
-                    let isDark = Preference.darkTime <= current && current <= Preference.lightTime;
-                    setDarkMode(mode: isDark);
+                    let isDark = Preference.darkTime <= current && current <= Preference.lightTime
+                    setDarkMode(mode: isDark)
                 }
             case Preference.SWITCH_SUN:
                 let solar = Solar(latitude: Preference.lat, longitude: Preference.lon)
                 setDarkMode(mode: solar!.isCivilNighttime)
             case Preference.SWITCH_OFF:
-                break;
+                break
             default:
-                break;
+                break
             }
-            SchedulerBackground.dataLock.unlock();
-            SchedulerBackground.settingChange.lock();
-            SchedulerBackground.settingChange.wait(until: Date.init(timeIntervalSinceNow: 15));
-            SchedulerBackground.settingChange.unlock();
+            SchedulerBackground.dataLock.unlock()
+            SchedulerBackground.settingChange.lock()
+            SchedulerBackground.settingChange.wait(until: Date.init(timeIntervalSinceNow: 15))
+            SchedulerBackground.settingChange.unlock()
         }
     }
     
     static func startBackground() {
-        scheduler = SchedulerBackground();
-        scheduler?.start();
+        scheduler = SchedulerBackground()
+        scheduler?.start()
     }
     
     static func alertChange() {
-        settingChange.signal();
+        settingChange.signal()
     }
     
     static func endBackground() {
-        scheduler?.cancel();
+        scheduler?.cancel()
     }
 }

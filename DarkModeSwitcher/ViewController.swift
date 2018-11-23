@@ -34,7 +34,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loadFromPreference()
-        SchedulerBackground.startBackground();
+        SchedulerBackground.startBackground()
     }
 
     override var representedObject: Any? {
@@ -44,14 +44,14 @@ class ViewController: NSViewController, NSWindowDelegate {
     }
     
     func loadFromPreference() {
-        Preference.loadPreference();
+        Preference.loadPreference()
         
-        lightTimePicker.dateValue = Preference.getDate(time: Preference.lightTime);
-        darkTimePicker.dateValue = Preference.getDate(time: Preference.darkTime);
-        bootCheckBox.state = Preference.runOnBoot ? .on : .off;
+        lightTimePicker.dateValue = Preference.getDate(time: Preference.lightTime)
+        darkTimePicker.dateValue = Preference.getDate(time: Preference.darkTime)
+        bootCheckBox.state = Preference.runOnBoot ? .on : .off
         
-        scheduleOption.select(scheduleOption.item(at: Preference.scheduleType));
-        optionChanged(scheduleOption);
+        scheduleOption.select(scheduleOption.item(at: Preference.scheduleType))
+        optionChanged(scheduleOption)
     }
     
     @IBAction func optionChanged(_ sender: NSPopUpButton) {
@@ -82,7 +82,7 @@ class ViewController: NSViewController, NSWindowDelegate {
         
         //send action
         Preference.setPreferenceType(scheduleType: sender.index(of: sender.selectedItem!))
-        SchedulerBackground.alertChange();
+        SchedulerBackground.alertChange()
     }
     
     @IBAction func TimeChanged(_ sender: NSDatePicker) {
@@ -106,7 +106,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     @IBAction func runOnBoot(_ sender: Any) {
         Preference.setRunOnBoot(runOnBoot: bootCheckBox?.state == .on);
         if (!AppDelegate.setBoot(state: Preference.runOnBoot)) {
-            print("Set on boot failed");
+            print("Set on boot failed")
         }
     }
     @IBAction func TerminationRequested(_ sender: Any) {
