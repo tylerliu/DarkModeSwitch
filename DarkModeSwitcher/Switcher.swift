@@ -1,6 +1,6 @@
 //
 //  Switcher.swift
-//  DarkModeSwitcher
+//  DarkModeSwitch
 //
 //  Created by Tyler on 2018/11/19.
 //  Copyright © 2018 Tyler Liu. All rights reserved.
@@ -32,7 +32,7 @@ func isDarkMode() -> Bool {
 }
 
 func triggerPermission() {
-    let code = "tell application \"System Events\" \nend tell";
+    let code = "tell application \"System Events\" \ntell appearance preferences to return dark mode\nend tell";
     
     var error: NSDictionary?
     if let scriptObject = NSAppleScript(source: code) {

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  SwitcherLauncher
+//  SwitcherLaunch
 //
 //  Created by Tyler on 2018/11/22.
 //  Copyright © 2018 Tyler Liu. All rights reserved.

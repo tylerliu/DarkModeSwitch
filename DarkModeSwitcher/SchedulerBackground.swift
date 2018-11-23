@@ -1,6 +1,6 @@
 //
 //  SchedulerBackground.swift
-//  DarkModeSwitcher
+//  DarkModeSwitch
 //
 //  Created by Tyler on 2018/11/21.
 //  Copyright © 2018 Tyler Liu. All rights reserved.

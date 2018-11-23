@@ -684,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="Setting" showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Dark Mode Switcher Setting" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Dark Mode Switch Setting" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="297" height="283"/>
@@ -709,7 +709,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="280" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQZ-3M-SSI">
+                            <datePicker hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQZ-3M-SSI">
                                 <rect key="frame" x="174" y="165" width="85" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <datePickerCell key="cell" alignment="left" drawsBackground="NO" id="2yf-KF-Da6">
@@ -725,7 +725,7 @@
                                     <action selector="TimeChanged:" target="XfG-lQ-9wD" id="Xw7-7m-cPg"/>
                                 </connections>
                             </datePicker>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rjg-zk-OG1">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rjg-zk-OG1">
                                 <rect key="frame" x="38" y="169" width="131" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Turns Light Mode At:" id="khz-qo-Nkt">
@@ -734,7 +734,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-9X-cul">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-9X-cul">
                                 <rect key="frame" x="39" y="137" width="128" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Turns Dark Mode At:" id="3Jf-1B-z0c">
@@ -783,7 +783,7 @@
                                     <action selector="TerminationRequested:" target="XfG-lQ-9wD" id="xbZ-53-YuC"/>
                                 </connections>
                             </button>
-                            <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfd-qX-1m9">
+                            <datePicker hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfd-qX-1m9">
                                 <rect key="frame" x="174" y="134" width="85" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <datePickerCell key="cell" alignment="left" drawsBackground="NO" id="wUa-Uj-atZ">
@@ -808,13 +808,37 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tWj-9A-Eww">
+                                <rect key="frame" x="155" y="144" width="107" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Dark Mode" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yNP-nw-CC6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="manualButtonClicked:" target="XfG-lQ-9wD" id="h3Z-iQ-IqV"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zYX-MM-glX">
+                                <rect key="frame" x="33" y="144" width="109" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Light Mode" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P8n-P9-ees">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="manualButtonClicked:" target="XfG-lQ-9wD" id="sUO-cK-vT8"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="bootCheckBox" destination="9k6-J1-HI6" id="3Vh-88-G8o"/>
                         <outlet property="customOption" destination="Zig-qo-nU0" id="dHO-Vh-gUT"/>
+                        <outlet property="darkButton" destination="tWj-9A-Eww" id="ffJ-nN-K15"/>
                         <outlet property="darkTimeLabel" destination="V4x-9X-cul" id="Vrw-c0-bjf"/>
                         <outlet property="darkTimePicker" destination="rfd-qX-1m9" id="1QU-ar-uzA"/>
+                        <outlet property="lightButton" destination="zYX-MM-glX" id="3Zm-ra-bFQ"/>
                         <outlet property="lightTimeLabel" destination="rjg-zk-OG1" id="msU-59-xQ2"/>
                         <outlet property="lightTimePicker" destination="WQZ-3M-SSI" id="ty2-hs-oSb"/>
                         <outlet property="manualOption" destination="fog-FB-gAi" id="8AL-x1-brP"/>
