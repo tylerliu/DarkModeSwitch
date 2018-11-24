@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "SchedulerBackground.main():SchedulerBackground.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "solar?.isNighttime">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "getTime(date:):Solar.swift">
          <PersistentStrings>
             <PersistentString

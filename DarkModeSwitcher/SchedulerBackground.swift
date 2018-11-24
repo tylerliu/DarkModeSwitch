@@ -33,8 +33,8 @@ class SchedulerBackground : Thread{
                     setDarkMode(mode: isDark)
                 }
             case Preference.SWITCH_SUN:
-                let solar = Solar(latitude: Preference.lat, longitude: Preference.lon)
-                setDarkMode(mode: solar!.isCivilNighttime)
+                let solar = Solar(latitude: Preference.lat, longitude: Preference.lon, zenith : .civil)
+                setDarkMode(mode: solar!.isNighttime)
             case Preference.SWITCH_OFF:
                 break
             default:
