@@ -3,7 +3,7 @@
 //  SolarExample
 //
 //  Created by Chris Howell on 16/01/2016.
-//  Copyright © 2016 Chris Howell. All rights reserved.
+//  Copyright © 2016-2018 Chris Howell, Tyler Liu. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the “Software”), to deal
@@ -42,6 +42,11 @@ public struct Solar {
     public fileprivate(set) var nauticalSunset: Date?
     public fileprivate(set) var astronomicalSunrise: Date?
     public fileprivate(set) var astronomicalSunset: Date?
+    
+    //for polar night/midnight sun
+    public fileprivate(set) var midnightSun = false
+    public fileprivate(set) var polarNight = false
+    
     
     // MARK: Init
     
@@ -92,7 +97,7 @@ public struct Solar {
         case astronimical = 108
     }
     
-    fileprivate func calculate(_ sunriseSunset: SunriseSunset, for date: Date, and zenith: Zenith) -> Date? {
+    fileprivate mutating func calculate(_ sunriseSunset: SunriseSunset, for date: Date, and zenith: Zenith) -> Date? {
         guard let utcTimezone = TimeZone(identifier: "UTC") else { return nil }
         
         // Get the day of the year
@@ -141,11 +146,13 @@ public struct Solar {
         
         // No sunrise
         guard cosH < 1 else {
+            polarNight = true;
             return nil
         }
         
         // No sunset
         guard cosH > -1 else {
+            midnightSun = true;
             return nil
         }
         
@@ -214,7 +221,7 @@ extension Solar {
             let sunrise = sunrise,
             let sunset = sunset
             else {
-                return false
+                return midnightSun
         }
         
         let beginningOfDay = sunrise.timeIntervalSince1970
@@ -240,12 +247,12 @@ extension Solar {
             let civilSunrise = civilSunrise,
             let civilSunset = civilSunset
             else {
-                return false
+                return midnightSun
         }
         
-        let beginningOfDay = civilSunrise.timeIntervalSince1970
-        let endOfDay = civilSunset.timeIntervalSince1970
-        let currentTime = self.date.timeIntervalSince1970
+        let beginningOfDay = getTime(date: civilSunrise)
+        let endOfDay = getTime(date: civilSunset)
+        let currentTime = getTime(date: self.date)
         
         let isSunriseOrLater = currentTime >= beginningOfDay
         let isBeforeSunset = currentTime < endOfDay
@@ -270,4 +277,18 @@ private extension Double {
     var radiansToDegrees: Double {
         return (Double(self) * 180.0) / Double.pi
     }
+}
+
+
+//utility functions for date
+func getTime(date : Date) -> Int {
+    let comp = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
+    let hour = comp.hour!
+    let minute = comp.minute!
+    let second = comp.second!
+    return hour * 3600 + minute * 60 + second
+}
+
+func getDate(time : Int) -> Date {
+    return Calendar.current.date(bySettingHour: time / 3600, minute: (time % 3600) / 60, second: time % 60, of: Date()) ?? Date()
 }

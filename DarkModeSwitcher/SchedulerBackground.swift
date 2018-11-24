@@ -22,7 +22,7 @@ class SchedulerBackground : Thread{
             SchedulerBackground.dataLock.lock()
             switch Preference.scheduleType {
             case Preference.SWITCH_SCHEDULE:
-                let current = Preference.getTime(date: Date.init(timeIntervalSinceNow: 0)) // current time
+                let current = getTime(date: Date.init(timeIntervalSinceNow: 0)) // current time
                 if Preference.lightTime == Preference.darkTime {
                     break // do nothing
                 } else if Preference.lightTime < Preference.darkTime { // normal

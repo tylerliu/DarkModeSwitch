@@ -46,8 +46,8 @@ class ViewController: NSViewController, NSWindowDelegate {
     func loadFromPreference() {
         Preference.loadPreference()
         
-        lightTimePicker.dateValue = Preference.getDate(time: Preference.lightTime)
-        darkTimePicker.dateValue = Preference.getDate(time: Preference.darkTime)
+        lightTimePicker.dateValue = getDate(time: Preference.lightTime)
+        darkTimePicker.dateValue = getDate(time: Preference.darkTime)
         bootCheckBox.state = Preference.runOnBoot ? .on : .off
         
         scheduleOption.select(scheduleOption.item(at: Preference.scheduleType))
@@ -86,8 +86,8 @@ class ViewController: NSViewController, NSWindowDelegate {
     }
     
     @IBAction func TimeChanged(_ sender: NSDatePicker) {
-        Preference.setPreference(lightTime: Preference.getTime(date: lightTimePicker.dateValue),
-                                 darkTime: Preference.getTime(date: darkTimePicker.dateValue))
+        Preference.setPreference(lightTime: getTime(date: lightTimePicker.dateValue),
+                                 darkTime: getTime(date: darkTimePicker.dateValue))
         
     }
     

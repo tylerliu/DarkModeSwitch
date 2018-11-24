@@ -106,17 +106,4 @@ class Preference {
         UserDefaults.standard.set(lon, forKey: "lon")
     }
     
-    //utility function
-    public static func getTime(date : Date) -> Int {
-        let comp = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
-        let hour = comp.hour!
-        let minute = comp.minute!
-        let second = comp.second!
-        return hour * 3600 + minute * 60 + second
-    }
-    
-    public static func getDate(time : Int) -> Date {
-        return Calendar.current.date(bySettingHour: time / 3600, minute: (time % 3600) / 60, second: time % 60, of: Date()) ?? Date()
-    }
-    
 }

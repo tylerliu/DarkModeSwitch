@@ -13,12 +13,14 @@ class LocationService : NSObject, CLLocationManagerDelegate {
     
     static let locationManager = CLLocationManager()
     static private let shared = LocationService()
+    static private var initialized = false;
     
     static func initiatize() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = shared
             locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         }
+        initialized = true;
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -32,6 +34,10 @@ class LocationService : NSObject, CLLocationManagerDelegate {
     }
     
     static func startMonitor() {
+        if !initialized {
+            initiatize()
+            update()
+        }
         locationManager.startMonitoringSignificantLocationChanges()
     }
     

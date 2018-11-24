@@ -28,8 +28,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             name: NSWorkspace.didWakeNotification, object: nil)
         
         checkBoot()
-        LocationService.initiatize()
-        LocationService.update()
     }
     
     func checkBoot() {

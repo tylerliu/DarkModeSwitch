@@ -744,7 +744,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9k6-J1-HI6">
-                                <rect key="frame" x="39" y="68" width="96" height="18"/>
+                                <rect key="frame" x="37" y="28" width="96" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Run on boot" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Z6p-Zg-5Ie">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -830,6 +830,14 @@
                                     <action selector="manualButtonClicked:" target="XfG-lQ-9wD" id="sUO-cK-vT8"/>
                                 </connections>
                             </button>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="YPv-hO-eba">
+                                <rect key="frame" x="0.0" y="199" width="280" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </box>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="1PY-68-zMo">
+                                <rect key="frame" x="0.0" y="65" width="280" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </box>
                         </subviews>
                     </view>
                     <connections>
