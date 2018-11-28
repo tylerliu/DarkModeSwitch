@@ -105,9 +105,7 @@ class ViewController: NSViewController, NSWindowDelegate {
     
     @IBAction func runOnBoot(_ sender: Any) {
         Preference.setRunOnBoot(runOnBoot: bootCheckBox?.state == .on);
-        if (!AppDelegate.setBoot(state: Preference.runOnBoot)) {
-            print("Set on boot failed")
-        }
+        AppDelegate.setBoot(state: Preference.runOnBoot)
     }
     @IBAction func TerminationRequested(_ sender: Any) {
         exit(EXIT_SUCCESS);
