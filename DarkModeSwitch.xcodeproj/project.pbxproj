@@ -17,7 +17,7 @@
 		9B4B939A21A3F32B0016E409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4B939821A3F32B0016E409 /* Main.storyboard */; };
 		9B4B93A621A3F32B0016E409 /* DarkModeSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B93A521A3F32B0016E409 /* DarkModeSwitcherTests.swift */; };
 		9B4B93B121A3F32B0016E409 /* DarkModeSwitcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B93B021A3F32B0016E409 /* DarkModeSwitcherUITests.swift */; };
-		9B4B93BF21A3F3840016E409 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B93BE21A3F3840016E409 /* Switcher.swift */; };
+		9B4B93BF21A3F3840016E409 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B93BE21A3F3840016E409 /* Switch.swift */; };
 		9B88C9ED21AE47E200800F2E /* StartUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88C9EC21AE47E200800F2E /* StartUp.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,20 +44,20 @@
 		9B336A9F21A73E0300050435 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		9B366F6F21A646D500CCDF94 /* SchedulerBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerBackground.swift; sourceTree = "<group>"; };
 		9B366F7121A6A03200CCDF94 /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
-		9B4B938F21A3F32A0016E409 /* DarkModeSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkModeSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4B938F21A3F32A0016E409 /* DarkModeSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkModeSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4B939221A3F32A0016E409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B4B939421A3F32A0016E409 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B4B939621A3F32B0016E409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B4B939921A3F32B0016E409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B4B939B21A3F32B0016E409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B4B93A121A3F32B0016E409 /* DarkModeSwitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkModeSwitcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4B93A121A3F32B0016E409 /* DarkModeSwitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkModeSwitchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4B93A521A3F32B0016E409 /* DarkModeSwitcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeSwitcherTests.swift; sourceTree = "<group>"; };
 		9B4B93A721A3F32B0016E409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B4B93AC21A3F32B0016E409 /* DarkModeSwitcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkModeSwitcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4B93AC21A3F32B0016E409 /* DarkModeSwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkModeSwitchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4B93B021A3F32B0016E409 /* DarkModeSwitcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeSwitcherUITests.swift; sourceTree = "<group>"; };
 		9B4B93B221A3F32B0016E409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B4B93BE21A3F3840016E409 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
-		9B77663121A4A96A00C33596 /* DarkModeSwitcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DarkModeSwitcher.entitlements; sourceTree = "<group>"; };
+		9B4B93BE21A3F3840016E409 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
+		9B77663121A4A96A00C33596 /* DarkModeSwitch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DarkModeSwitch.entitlements; sourceTree = "<group>"; };
 		9B88C9EC21AE47E200800F2E /* StartUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,9 +97,9 @@
 		9B4B938621A3F32A0016E409 = {
 			isa = PBXGroup;
 			children = (
-				9B4B939121A3F32A0016E409 /* DarkModeSwitcher */,
-				9B4B93A421A3F32B0016E409 /* DarkModeSwitcherTests */,
-				9B4B93AF21A3F32B0016E409 /* DarkModeSwitcherUITests */,
+				9B4B939121A3F32A0016E409 /* DarkModeSwitch */,
+				9B4B93A421A3F32B0016E409 /* DarkModeSwitchTests */,
+				9B4B93AF21A3F32B0016E409 /* DarkModeSwitchUITests */,
 				9B4B939021A3F32A0016E409 /* Products */,
 				9B336A9E21A73E0300050435 /* Frameworks */,
 			);
@@ -108,56 +108,56 @@
 		9B4B939021A3F32A0016E409 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B4B938F21A3F32A0016E409 /* DarkModeSwitcher.app */,
-				9B4B93A121A3F32B0016E409 /* DarkModeSwitcherTests.xctest */,
-				9B4B93AC21A3F32B0016E409 /* DarkModeSwitcherUITests.xctest */,
+				9B4B938F21A3F32A0016E409 /* DarkModeSwitch.app */,
+				9B4B93A121A3F32B0016E409 /* DarkModeSwitchTests.xctest */,
+				9B4B93AC21A3F32B0016E409 /* DarkModeSwitchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9B4B939121A3F32A0016E409 /* DarkModeSwitcher */ = {
+		9B4B939121A3F32A0016E409 /* DarkModeSwitch */ = {
 			isa = PBXGroup;
 			children = (
-				9B77663121A4A96A00C33596 /* DarkModeSwitcher.entitlements */,
+				9B77663121A4A96A00C33596 /* DarkModeSwitch.entitlements */,
 				9B4B939221A3F32A0016E409 /* AppDelegate.swift */,
 				9B4B939421A3F32A0016E409 /* ViewController.swift */,
 				9B4B939621A3F32B0016E409 /* Assets.xcassets */,
 				9B4B939821A3F32B0016E409 /* Main.storyboard */,
 				9B4B939B21A3F32B0016E409 /* Info.plist */,
-				9B4B93BE21A3F3840016E409 /* Switcher.swift */,
+				9B4B93BE21A3F3840016E409 /* Switch.swift */,
 				9B366F7121A6A03200CCDF94 /* Preference.swift */,
 				9B366F6F21A646D500CCDF94 /* SchedulerBackground.swift */,
 				9B179C8F21A79E0B00F22263 /* Solar.swift */,
 				9B179C9121A7AF1100F22263 /* LocationBackground.swift */,
 				9B88C9EC21AE47E200800F2E /* StartUp.swift */,
 			);
-			path = DarkModeSwitcher;
+			path = DarkModeSwitch;
 			sourceTree = "<group>";
 		};
-		9B4B93A421A3F32B0016E409 /* DarkModeSwitcherTests */ = {
+		9B4B93A421A3F32B0016E409 /* DarkModeSwitchTests */ = {
 			isa = PBXGroup;
 			children = (
 				9B4B93A521A3F32B0016E409 /* DarkModeSwitcherTests.swift */,
 				9B4B93A721A3F32B0016E409 /* Info.plist */,
 			);
-			path = DarkModeSwitcherTests;
+			path = DarkModeSwitchTests;
 			sourceTree = "<group>";
 		};
-		9B4B93AF21A3F32B0016E409 /* DarkModeSwitcherUITests */ = {
+		9B4B93AF21A3F32B0016E409 /* DarkModeSwitchUITests */ = {
 			isa = PBXGroup;
 			children = (
 				9B4B93B021A3F32B0016E409 /* DarkModeSwitcherUITests.swift */,
 				9B4B93B221A3F32B0016E409 /* Info.plist */,
 			);
-			path = DarkModeSwitcherUITests;
+			path = DarkModeSwitchUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B4B938E21A3F32A0016E409 /* DarkModeSwitcher */ = {
+		9B4B938E21A3F32A0016E409 /* DarkModeSwitch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B4B93B521A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitcher" */;
+			buildConfigurationList = 9B4B93B521A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitch" */;
 			buildPhases = (
 				9B4B938B21A3F32A0016E409 /* Sources */,
 				9B4B938C21A3F32A0016E409 /* Frameworks */,
@@ -167,14 +167,14 @@
 			);
 			dependencies = (
 			);
-			name = DarkModeSwitcher;
+			name = DarkModeSwitch;
 			productName = DarkModeSwitcher;
-			productReference = 9B4B938F21A3F32A0016E409 /* DarkModeSwitcher.app */;
+			productReference = 9B4B938F21A3F32A0016E409 /* DarkModeSwitch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9B4B93A021A3F32B0016E409 /* DarkModeSwitcherTests */ = {
+		9B4B93A021A3F32B0016E409 /* DarkModeSwitchTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B4B93B821A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitcherTests" */;
+			buildConfigurationList = 9B4B93B821A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitchTests" */;
 			buildPhases = (
 				9B4B939D21A3F32B0016E409 /* Sources */,
 				9B4B939E21A3F32B0016E409 /* Frameworks */,
@@ -185,14 +185,14 @@
 			dependencies = (
 				9B4B93A321A3F32B0016E409 /* PBXTargetDependency */,
 			);
-			name = DarkModeSwitcherTests;
+			name = DarkModeSwitchTests;
 			productName = DarkModeSwitcherTests;
-			productReference = 9B4B93A121A3F32B0016E409 /* DarkModeSwitcherTests.xctest */;
+			productReference = 9B4B93A121A3F32B0016E409 /* DarkModeSwitchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9B4B93AB21A3F32B0016E409 /* DarkModeSwitcherUITests */ = {
+		9B4B93AB21A3F32B0016E409 /* DarkModeSwitchUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B4B93BB21A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitcherUITests" */;
+			buildConfigurationList = 9B4B93BB21A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitchUITests" */;
 			buildPhases = (
 				9B4B93A821A3F32B0016E409 /* Sources */,
 				9B4B93A921A3F32B0016E409 /* Frameworks */,
@@ -203,9 +203,9 @@
 			dependencies = (
 				9B4B93AE21A3F32B0016E409 /* PBXTargetDependency */,
 			);
-			name = DarkModeSwitcherUITests;
+			name = DarkModeSwitchUITests;
 			productName = DarkModeSwitcherUITests;
-			productReference = 9B4B93AC21A3F32B0016E409 /* DarkModeSwitcherUITests.xctest */;
+			productReference = 9B4B93AC21A3F32B0016E409 /* DarkModeSwitchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -236,7 +236,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9B4B938A21A3F32A0016E409 /* Build configuration list for PBXProject "DarkModeSwitcher" */;
+			buildConfigurationList = 9B4B938A21A3F32A0016E409 /* Build configuration list for PBXProject "DarkModeSwitch" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -249,9 +249,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B4B938E21A3F32A0016E409 /* DarkModeSwitcher */,
-				9B4B93A021A3F32B0016E409 /* DarkModeSwitcherTests */,
-				9B4B93AB21A3F32B0016E409 /* DarkModeSwitcherUITests */,
+				9B4B938E21A3F32A0016E409 /* DarkModeSwitch */,
+				9B4B93A021A3F32B0016E409 /* DarkModeSwitchTests */,
+				9B4B93AB21A3F32B0016E409 /* DarkModeSwitchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -293,7 +293,7 @@
 				9B88C9ED21AE47E200800F2E /* StartUp.swift in Sources */,
 				9B4B939321A3F32A0016E409 /* AppDelegate.swift in Sources */,
 				9B179C9021A79E0B00F22263 /* Solar.swift in Sources */,
-				9B4B93BF21A3F3840016E409 /* Switcher.swift in Sources */,
+				9B4B93BF21A3F3840016E409 /* Switch.swift in Sources */,
 				9B366F7021A646D500CCDF94 /* SchedulerBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,12 +319,12 @@
 /* Begin PBXTargetDependency section */
 		9B4B93A321A3F32B0016E409 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9B4B938E21A3F32A0016E409 /* DarkModeSwitcher */;
+			target = 9B4B938E21A3F32A0016E409 /* DarkModeSwitch */;
 			targetProxy = 9B4B93A221A3F32B0016E409 /* PBXContainerItemProxy */;
 		};
 		9B4B93AE21A3F32B0016E409 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9B4B938E21A3F32A0016E409 /* DarkModeSwitcher */;
+			target = 9B4B938E21A3F32A0016E409 /* DarkModeSwitch */;
 			targetProxy = 9B4B93AD21A3F32B0016E409 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -463,13 +463,13 @@
 				CODE_SIGN_ENTITLEMENTS = DarkModeSwitcher/DarkModeSwitcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DarkModeSwitcher/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DarkModeSwitch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.DarkModeSwitcher";
+				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.DarkModeSwitch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -483,13 +483,13 @@
 				CODE_SIGN_ENTITLEMENTS = DarkModeSwitcher/DarkModeSwitcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = DarkModeSwitcher/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DarkModeSwitch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.DarkModeSwitcher";
+				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.DarkModeSwitch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -512,7 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.DarkModeSwitcherTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkModeSwitcher.app/Contents/MacOS/DarkModeSwitcher";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkModeSwitch.app/Contents/MacOS/DarkModeSwitch";
 			};
 			name = Debug;
 		};
@@ -532,7 +532,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Tyler-Liu.DarkModeSwitcherTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkModeSwitcher.app/Contents/MacOS/DarkModeSwitcher";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkModeSwitch.app/Contents/MacOS/DarkModeSwitch";
 			};
 			name = Release;
 		};
@@ -577,7 +577,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B4B938A21A3F32A0016E409 /* Build configuration list for PBXProject "DarkModeSwitcher" */ = {
+		9B4B938A21A3F32A0016E409 /* Build configuration list for PBXProject "DarkModeSwitch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B4B93B321A3F32B0016E409 /* Debug */,
@@ -586,7 +586,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B4B93B521A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitcher" */ = {
+		9B4B93B521A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B4B93B621A3F32B0016E409 /* Debug */,
@@ -595,7 +595,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B4B93B821A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitcherTests" */ = {
+		9B4B93B821A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B4B93B921A3F32B0016E409 /* Debug */,
@@ -604,7 +604,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B4B93BB21A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitcherUITests" */ = {
+		9B4B93BB21A3F32B0016E409 /* Build configuration list for PBXNativeTarget "DarkModeSwitchUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B4B93BC21A3F32B0016E409 /* Debug */,
